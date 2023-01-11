@@ -24,7 +24,7 @@ app.use('/api/v1/inventory', inventoryRouter)
 
 // 404 response
 app.use(errorHandlerMiddleware)
-
+console.log(process.env.MONGO_URL)
 // listening for requests
 const start = async () => {
   try {
