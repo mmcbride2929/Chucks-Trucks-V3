@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchSaleVehicles = async () => {
       const vehicles = await axios.get(
-        'http://localhost:5000/api/v1/home/forSaleVehicles'
+        'https://chucks-trucks-v3-production.up.railway.app/api/v1/home/forSaleVehicles'
       )
 
       setForSaleVehicles(vehicles.data)

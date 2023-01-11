@@ -12,7 +12,9 @@ const Inventory = () => {
   // fetching all vehicles on page load
   useEffect(() => {
     const fetchInventory = async () => {
-      const response = await axios.get('http://localhost:5000/api/v1/inventory')
+      const response = await axios.get(
+        'https://chucks-trucks-v3-production.up.railway.app/api/v1/inventory'
+      )
       setInventory(response.data)
     }
     fetchInventory()

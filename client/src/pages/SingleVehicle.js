@@ -31,7 +31,7 @@ const SingleVehicle = () => {
   useEffect(() => {
     const fetchVehicle = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/inventory/${path}`
+        `https://chucks-trucks-v3-production.up.railway.app/api/v1/inventory/${path}`
       )
 
       setVehicle(response.data)
