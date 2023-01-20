@@ -34,6 +34,3 @@ MERN stack project - A Truck dealership landing page that pulls it's vehicle inv
 - How to host a back end server
 - How to create and fetch from an Express API
 
-
-# Chucks-Trucks-V3
-# Chucks-Trucks-V3
