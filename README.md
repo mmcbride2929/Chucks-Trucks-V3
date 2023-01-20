@@ -1,7 +1,7 @@
 # Chucks-Trucks-V3
 MERN stack project - A Truck dealership landing page that pulls it's vehicle inventory from an express backend & sorts the vehicles accordingly. 
 
-**Link to project:** https://chucks-trucks.herokuapp.com/
+## [View Demo](https://aesthetic-choux-7c3aff.netlify.app/)
 
 ![](/client/src/img/readmephoto.png)
 
