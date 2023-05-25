@@ -22,7 +22,7 @@ const Home = () => {
   }, [])
 
   return (
-    <Box bg="whitesmoke">
+    <Box bg="white">
       <Hero />
       <Sale forSaleVehicles={forSaleVehicles} />
       <Reviews />

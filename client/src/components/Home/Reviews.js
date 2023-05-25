@@ -23,13 +23,18 @@ const Reviews = () => {
     },
   ])
   return (
-    <Box p={5}>
+    <Box
+      p={{ base: 6, sm: 0 }}
+      maxW="950px"
+      m={{ base: '10px auto', sm: '75px auto' }}
+    >
       <ReviewHeader />
       <Box
-        p={{ base: 0, md: 6 }}
+        p={{ base: 0, md: 0 }}
         display="flex"
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
+        my={{ base: 6, sm: 12 }}
       >
         {userReviews.map((review, index) => (
           <Review key={index} review={review} />

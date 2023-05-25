@@ -21,13 +21,9 @@ const app = () => {
         <Router>
           <ScrollToTop />
           <Box w="100%" m="0 auto">
-            <Box maxW="900px" m="0 auto">
+            <Box m="0 auto">
               <Navbar />
-              <Box
-                as="body"
-                border="1px solid silver"
-                minH={{ base: '92vh', sm: '88vh' }}
-              >
+              <Box as="body" minH={{ base: '92vh', sm: '88vh' }}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/inventory" element={<Inventory />} />

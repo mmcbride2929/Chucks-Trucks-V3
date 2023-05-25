@@ -37,17 +37,9 @@ const Hero = () => {
           <Stack
             textAlign="center"
             alignItems="center"
-            spacing={2}
-            mb={['25px', , '']}
+            spacing={4}
+            mb={['50px', , '100px']}
           >
-            <chakra.h2
-              fontSize={{ base: '1.6rem', sm: '2rem' }}
-              fontWeight="semibold"
-              color="white"
-              textTransform="uppercase"
-            >
-              welcome to
-            </chakra.h2>
             <Image
               src={logo}
               w={{ base: '320px', sm: '350px' }}
@@ -73,7 +65,7 @@ const Hero = () => {
             <chakra.h2
               fontSize={{ base: '1.5rem', sm: '2rem' }}
               fontWeight="bold"
-              color="white"
+              color="red"
               textTransform="uppercase"
             >
               monster sale
@@ -91,7 +83,7 @@ const Hero = () => {
                 variant="outline"
                 _hover={{
                   bg: 'white',
-                  color: 'red',
+                  color: 'black',
                 }}
               >
                 SHOP NOW

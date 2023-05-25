@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { chakra, Box, Button, Link } from '@chakra-ui/react'
+import { chakra, Box, Button, Link, Badge } from '@chakra-ui/react'
 
 const Vehicle = ({ vehicle }) => {
   const { name, miles, year, photo, price, condition, _id, description } =
@@ -12,106 +12,168 @@ const Vehicle = ({ vehicle }) => {
     <Box w="100%" display="flex" justifyContent="center" alignItems="center">
       <Box
         bg="white"
-        maxW={{ base: '350px', sm: '300px' }}
-        h={{ base: '500px', lg: '490px' }}
-        borderWidth="1px"
-        marginTop={{ base: 5, sm: 0 }}
-        marginBottom={10}
-        rounded="lg"
-        boxShadow="xl"
-        position="relative"
         border="1px solid silver"
+        w={{ base: '275px', sm: '300px' }}
+        mb={{ base: 8, md: 2 }}
+        mx={2}
+        rounded="md"
+        _hover={{ boxShadow: 'xl', shadow: 'xl' }}
+        position="relative"
       >
-        <Box
-          roundedTop="lg"
-          h="200px"
-          w="100%"
-          backgroundImage={require(`../../img/photos/${photo}`)}
-          bgPos="center"
-          bgSize="cover"
-          onClick={() => navigate(`${_id}`)}
-          _hover={{ cursor: 'pointer' }}
-        ></Box>
-        <Box px={{ base: '20px', sm: '30px' }} pt="2" pb="4">
-          <Box textAlign="center">
-            <chakra.h1 fontSize={['1rem']} fontWeight="bold" mb={2}>
-              {year} - {name}
-            </chakra.h1>
+        <Link
+          onClick={() => navigate(`/inventory/${_id}`)}
+          _hover={{ textDecoration: 'none' }}
+        >
+          <Box p={3} pb={1}>
             <Box
-              mx={5}
-              color="black"
-              textAlign="center"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <chakra.p fontWeight="bold" fontSize={['0.9rem']}>
-                {' '}
-                Price:{' '}
-              </chakra.p>
-
-              <chakra.span
-                mx="10px"
-                py="1px"
-                color="red"
-                fontSize={['0.9rem']}
-                fontWeight="bold"
+              h="175px"
+              w="100%"
+              roundedTop="md"
+              backgroundImage={require(`../../img/photos/${photo}`)}
+              bgPos="center"
+              bgSize="cover"
+            ></Box>
+            <Box py={2}>
+              <Box
+                className="miles-price-wrapper"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
               >
-                ${price.toLocaleString('en-US')}
-              </chakra.span>
+                <Box>
+                  <chakra.h1 fontSize={['1rem', '']} fontWeight="bold">
+                    {year} - {name}
+                  </chakra.h1>
+                </Box>
+                <Box>
+                  <chakra.p fontSize={'1rem'} color="red" fontWeight="bold">
+                    ${price.toLocaleString('en-US')}
+                  </chakra.p>
+                </Box>
+              </Box>
+              <Box display="flex" justifyContent="space-between">
+                <chakra.p fontSize={'0.85rem'}>
+                  <chakra.span fontSize={'0.85rem'}>Condition: </chakra.span>
+                  {condition}
+                </chakra.p>
+                <chakra.p fontSize={'0.85rem'} fontWeight="bold">
+                  {miles.toLocaleString('en-US')}
+                  <chakra.span> mi.</chakra.span>
+                </chakra.p>
+              </Box>
+              <Link onClick={() => navigate(`inventory/${_id}`)}>
+                <Button
+                  w="100%"
+                  mt="25px"
+                  border="1px solid gray"
+                  borderRadius="55px"
+                  bg="white"
+                  color="black"
+                  fontSize="0.8rem"
+                  z-zIndex={99}
+                  _hover={{
+                    border: '2px solid black',
+                  }}
+                >
+                  CHECK AVAILABILITY
+                </Button>
+              </Link>
             </Box>
-            <chakra.p>
-              <chakra.span fontWeight="bold" fontSize={['0.9rem']}>
-                {' '}
-                Miles:{' '}
-              </chakra.span>
-              {miles.toLocaleString('en-US')}
-            </chakra.p>
-            <chakra.p>
-              <chakra.span fontSize={['0.9rem']} fontWeight="bold">
-                {' '}
-                Condition:{' '}
-              </chakra.span>
-              {condition}
-            </chakra.p>
-
-            <chakra.p
-              mt={4}
-              fontSize={{ base: '0.9rem', sm: '0.9rem' }}
-              fontWeight="500"
-            >
-              {description}
-            </chakra.p>
-
-            <Link
-              onClick={() => navigate(`${_id}`)}
-              _hover={{ textDecoration: 'none' }}
-            >
-              <Button
-                position="absolute"
-                left="50%"
-                right="0%"
-                w="100px"
-                transform="translate(-50%, -50%)"
-                textAlign="center"
-                bottom="5px"
-                bg="red"
-                color="white"
-                fontSize="0.8rem"
-                variant="solid"
-                boxShadow="lg"
-                _hover={{
-                  bg: 'black',
-                  color: 'white',
-                }}
-              >
-                DETAILS
-              </Button>
-            </Link>
           </Box>
-        </Box>
+        </Link>
       </Box>
     </Box>
   )
 }
 export default Vehicle
+
+{
+  /* <Box
+      bg="white"
+      border="1px solid silver"
+      w={{ base: '275px', sm: '300px' }}
+      mb={{ base: 8, md: 2 }}
+      mx={2}
+      rounded="md"
+      _hover={{ boxShadow: 'xl', shadow: 'xl' }}
+      position="relative"
+    >
+      <Link
+        onClick={() => navigate(`inventory/${_id}`)}
+        _hover={{ textDecoration: 'none' }}
+      >
+        <Box p={3} pb={1}>
+          <Box
+            h="175px"
+            w="100%"
+            roundedTop="md"
+            backgroundImage={require(`../../img/photos/${photo}`)}
+            bgPos="center"
+            bgSize="cover"
+          ></Box>
+          <Badge
+            position="absolute"
+            right="5"
+            top="145"
+            px="1"
+            py="1px"
+            bg="white"
+            fontSize={'1rem'}
+            fontWeight="bold"
+            borderRadius="3px"
+            borderWidth="2px"
+            borderColor="white"
+            textDecoration="solid line-through #e00404 1.5px"
+          >
+            ${price.toLocaleString('en-US')}
+          </Badge>
+          <Box py={2}>
+            <Box
+              className="miles-price-wrapper"
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Box>
+                <chakra.h1 fontSize={['1rem', '']} fontWeight="bold">
+                  {year} - {name}
+                </chakra.h1>
+              </Box>
+              <Box>
+                <chakra.p fontSize={'1rem'} color="red" fontWeight="bold">
+                  ${vehicle.sale.salePrice.toLocaleString('en-US')}
+                </chakra.p>
+              </Box>
+            </Box>
+            <Box display="flex" justifyContent="space-between">
+              <chakra.p fontSize={'0.85rem'}>
+                <chakra.span fontSize={'0.85rem'}>Condition: </chakra.span>
+                {condition}
+              </chakra.p>
+              <chakra.p fontSize={'0.85rem'} fontWeight="bold">
+                {miles.toLocaleString('en-US')}
+                <chakra.span> mi.</chakra.span>
+              </chakra.p>
+            </Box>
+            <Link onClick={() => navigate(`inventory/${_id}`)}>
+              <Button
+                w="100%"
+                mt="25px"
+                border="1px solid gray"
+                borderRadius="55px"
+                bg="white"
+                color="black"
+                fontSize="0.8rem"
+                z-zIndex={99}
+                _hover={{
+                  border: '2px solid black',
+                }}
+              >
+                CHECK AVAILABILITY
+              </Button>
+            </Link>
+          </Box>
+        </Box>
+      </Link>
+    </Box> */
+}

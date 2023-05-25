@@ -1,17 +1,8 @@
-import logo from '../../img/logo/logo.png'
+import logo from '../../img/logo/logoRED.png'
 
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 
-import {
-  chakra,
-  Box,
-  Flex,
-  useColorModeValue,
-  SimpleGrid,
-  Button,
-  VStack,
-  Image,
-} from '@chakra-ui/react'
+import { chakra, Box, Image } from '@chakra-ui/react'
 const FeatureList = () => {
   return (
     <Box
@@ -19,8 +10,8 @@ const FeatureList = () => {
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
-      shadow="xl"
-      bg="red"
+      border="1.5px solid black"
+      bg="white"
       p={4}
       py={8}
     >
@@ -29,14 +20,14 @@ const FeatureList = () => {
         fontSize={{ base: '', lg: '1.6rem' }}
         fontWeight="bold"
         textAlign={{ base: '', lg: 'center' }}
-        color="white"
+        color="black"
         lineHeight="shorter"
         letterSpacing="tight"
       >
         We Promise
       </chakra.h2>
       <Box
-        color="white"
+        color="black"
         fontSize={{ base: '', lg: '0.9rem' }}
         w="150px"
         m="0 auto"
@@ -68,13 +59,13 @@ const FeatureList = () => {
         fontSize={{ base: '', lg: '1.2rem' }}
         fontWeight="bold"
         textAlign={{ base: '', lg: 'center' }}
-        color="white"
+        color="black"
         lineHeight="shorter"
         letterSpacing="tight"
       >
         Satisfaction Guaranteed
       </chakra.h2>
-      <chakra.p color="white" fontSize={{ base: '', lg: '0.8rem' }}>
+      <chakra.p color="black" fontSize={{ base: '', lg: '0.8rem' }}>
         Are you tired of buying trucks that break down after 5 or 6 years? Why
         do that when you can get a truck thats ALREADY broken down. It's only
         up-hill from here!

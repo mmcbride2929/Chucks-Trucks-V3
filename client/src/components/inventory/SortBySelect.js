@@ -1,4 +1,4 @@
-import { Box, Select } from '@chakra-ui/react'
+import { Box, Select, border, textDecoration } from '@chakra-ui/react'
 import { useContext } from 'react'
 import InventoryContext from '../../context/InventoryContext'
 import axios from 'axios'
@@ -10,19 +10,20 @@ const SortBySelect = () => {
   const handleSort = async (e) => {
     const sortType = e.target.value
     const response = await axios.get(
-      `http://localhost:5000/api/v1/inventory/sortBy=${sortType}`
+      `https://chucks-trucks-v3-production.up.railway.app/api/v1/inventory/sortBy=${sortType}`
     )
     setInventory(response.data)
   }
 
   return (
-    <Box>
+    <Box display={'flex'} alignItems={'center'}>
       <Select
         onChange={handleSort}
         w={{ base: '145px' }}
         fontSize={{ base: 'xs' }}
-        size="md"
-        outline="1px solid black"
+        size="sm"
+        outline={'1px solid black'}
+        focusBorderColor="black"
       >
         <option value="priceLow">Price - Lowest</option>
         <option value="priceHigh">Price - Highest</option>

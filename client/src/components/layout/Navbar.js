@@ -26,10 +26,10 @@ const Navbar = () => {
     <>
       <chakra.header
         bg="white"
-        w="full"
+        maxW="1100px"
         px={{ base: 2, sm: 4 }}
-        py={2}
-        shadow="md"
+        py={1}
+        m="0 auto"
       >
         <Flex
           alignItems="center"
@@ -50,7 +50,6 @@ const Navbar = () => {
             <HStack
               spacing={3}
               mr={1}
-              color="red"
               display={{ base: 'none', md: 'inline-flex' }}
             >
               <Button
@@ -59,7 +58,7 @@ const Navbar = () => {
                 fontSize="14px"
                 onClick={() => navigate('/inventory')}
                 variant="ghost"
-                _hover={{ color: 'white', bg: 'red' }}
+                _hover={{ border: '1px solid black' }}
               >
                 Inventory
               </Button>
@@ -69,7 +68,7 @@ const Navbar = () => {
                 fontSize="14px"
                 onClick={() => navigate('/finance')}
                 variant="ghost"
-                _hover={{ color: 'white', bg: 'red' }}
+                _hover={{ border: '1px solid black' }}
               >
                 Finance
               </Button>
@@ -79,7 +78,7 @@ const Navbar = () => {
                 fontSize="14px"
                 onClick={() => navigate('/about')}
                 variant="ghost"
-                _hover={{ color: 'white', bg: 'red' }}
+                _hover={{ border: '1px solid black' }}
               >
                 About
               </Button>
@@ -89,11 +88,11 @@ const Navbar = () => {
                 display={{ base: 'flex', md: 'none' }}
                 aria-label="Open menu"
                 fontSize="20px"
-                color="red"
+                color="black"
                 variant="ghost"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
-                _hover={{ color: 'white', bg: 'red' }}
+                _hover={{ color: 'black', border: '1px solid black' }}
               />
 
               <VStack
@@ -110,42 +109,43 @@ const Navbar = () => {
                 rounded="sm"
                 shadow="sm"
                 zIndex="2"
-                color="red"
+                color="black"
               >
                 <CloseButton
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
                 <Link
-                  w="20%"
+                  w="80px"
                   _hover={{
                     textDecoration: 'none',
                   }}
                   onClick={() => navigate('/')}
                 >
                   <Button
+                    textAlign="center"
+                    h={9}
                     w="100%"
                     fontSize="0.9rem"
                     variant="ghost"
-                    border="1px solid red"
-                    _hover={{ color: 'white', bg: 'red' }}
+                    _hover={{ border: '1px solid black' }}
                     onClick={mobileNav.onClose}
                   >
                     Home
                   </Button>
                 </Link>
                 <Link
-                  w="20%"
+                  w="80px"
                   _hover={{
                     textDecoration: 'none',
                   }}
                   onClick={() => navigate('/inventory')}
                 >
                   <Button
+                    h={9}
                     w="100%"
                     fontSize="0.9rem"
-                    border="1px solid red"
-                    _hover={{ color: 'white', bg: 'red' }}
+                    _hover={{ border: '1px solid black' }}
                     variant="ghost"
                     onClick={mobileNav.onClose}
                   >
@@ -154,17 +154,17 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  w="20%"
+                  w="80px"
                   _hover={{
                     textDecoration: 'none',
                   }}
                   onClick={() => navigate('/finance')}
                 >
                   <Button
+                    h={9}
                     w="100%"
                     fontSize="0.9rem"
-                    border="1px solid red"
-                    _hover={{ color: 'white', bg: 'red' }}
+                    _hover={{ border: '1px solid black' }}
                     variant="ghost"
                     onClick={mobileNav.onClose}
                   >
@@ -173,18 +173,18 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  w="20%"
+                  w="80px"
                   _hover={{
                     textDecoration: 'none',
                   }}
                   onClick={() => navigate('/about')}
                 >
                   <Button
+                    h={9}
                     w="100%"
                     fontSize="0.9rem"
                     variant="ghost"
-                    border="1px solid red"
-                    _hover={{ color: 'white', bg: 'red' }}
+                    _hover={{ border: '1px solid black' }}
                     onClick={mobileNav.onClose}
                   >
                     About

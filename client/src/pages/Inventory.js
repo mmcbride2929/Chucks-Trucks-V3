@@ -22,16 +22,16 @@ const Inventory = () => {
 
   return (
     <Box
-      bg="whitesmoke"
+      bg="white"
       as="section"
       p={8}
-      paddingLeft={{ base: 8, lg: 0 }}
+      paddingLeft={{ base: 8, lg: 4 }}
       m="0 auto"
-      maxW="1350px"
+      maxW="950px"
     >
       <Header />
       <Box display="flex">
-        <Box display={{ base: 'none', lg: 'block' }} w="25%">
+        <Box display={{ base: 'none', lg: 'block' }} w="280px">
           <FeatureList />
         </Box>
         <Box

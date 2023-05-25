@@ -5,15 +5,14 @@ import { chakra, Flex, Icon, Image } from '@chakra-ui/react'
 const Footer = () => {
   return (
     <Flex
-      w="full"
+      maxW="1100px"
       bg="white"
-      p="5px"
-      shadow="md"
       alignItems="center"
       justifyContent="center"
+      m="0 auto"
     >
       <Flex
-        h={{ base: 'vh', sm: '5vh' }}
+        h={{ base: '4vh', sm: '4vh' }}
         w="full"
         as="footer"
         flexDir={{ base: 'column', sm: 'row' }}
@@ -24,10 +23,10 @@ const Footer = () => {
         bg="white"
       >
         <chakra.a href="/">
-          <Image src={logo} alt="logo" maxW="185px" />
+          <Image src={logo} alt="logo" maxW="165px" />
         </chakra.a>
 
-        <chakra.p py={{ base: '0', sm: '0' }} color="black">
+        <chakra.p py={{ base: '0', sm: '0' }} fontSize="0.85rem" color="black">
           {' '}
           All rights reserved
         </chakra.p>
