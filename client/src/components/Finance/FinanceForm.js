@@ -20,7 +20,6 @@ import validator from 'validator'
 const FinanceForm = () => {
   const [formInput, setFormInput] = useState({
     firstName: '',
-    lastName: '',
     email: '',
     address: '',
     creditScore: '',
@@ -42,10 +41,6 @@ const FinanceForm = () => {
 
     if (!formInput.firstName) {
       errorObject.firstName = 'name required'
-    }
-
-    if (!formInput.lastName) {
-      errorObject.lastName = 'name required'
     }
 
     // validating email with validator
@@ -93,7 +88,6 @@ const FinanceForm = () => {
     //if any errors present
     if (
       errorCheck.firstName ||
-      errorCheck.lastName ||
       errorCheck.email ||
       errorCheck.address ||
       errorCheck.downPayment ||
@@ -113,15 +107,15 @@ const FinanceForm = () => {
   }
 
   return (
-    <Box p={8} maxW="900px" m="0 auto">
+    <Box p={{ base: 6, sm: 12 }} maxW="500px" m="0 auto">
       <Box
         px={{ base: '0px', md: '20px' }}
         textAlign={{ base: 'center', md: null }}
       >
-        <Heading fontSize={{ base: '1.6rem', sm: '2rem' }} fontWeight="500">
+        <Heading fontSize={{ base: '1.5rem', sm: '1.8rem' }} fontWeight="700">
           Personal Information
         </Heading>
-        <Text mt={1} fontSize={{ base: '1.1rem', sm: '1.1rem' }}>
+        <Text mt={1} fontSize={{ base: '0.9rem', sm: '1.1rem' }}>
           Use a permanent address where you can receive mail.
         </Text>
       </Box>
@@ -132,55 +126,48 @@ const FinanceForm = () => {
       >
         <GridItem mt={{ base: '20px', md: null }} colSpan={{ md: 2 }}>
           <chakra.form
-            border="1px solid grey"
             method="POST"
-            shadow="xl"
             rounded={[null, 'md']}
             overflow={{ sm: 'hidden' }}
             mb={{ base: '10px', md: '' }}
             display={`${formActive}`}
+            border="1px solid silver"
           >
-            <Stack
-              px={4}
-              py={5}
-              p={[null, 6]}
-              bg="white"
-              boxShadow="lg"
-              spacing={6}
-            >
-              <SimpleGrid columns={6} spacing={6}>
-                <FormControl as={GridItem} colSpan={[6, 3]}>
+            <Stack px={4} py={5} p={[null, 6]} bg="white" spacing={6}>
+              <SimpleGrid columns={6} spacing={2}>
+                <FormControl as={GridItem} colSpan={[6]}>
                   <FormLabel
                     htmlFor="firstName"
+                    mb={'2px'}
                     fontSize="1rem"
-                    fontWeight="semibold"
+                    fontWeight="500"
                     color="black"
                   >
-                    First name
+                    Name
                   </FormLabel>
                   <Input
                     value={formInput.firstName}
+                    placeholder="Enter your name"
                     onChange={handleChange}
                     position="relative"
                     required
-                    maxLength="25"
+                    maxLength="30"
                     type="text"
                     name="firstName"
                     id="firstName"
                     autoComplete="given-name"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
-                    shadow="sm"
+                    borderColor="silver"
+                    bg="white"
+                    focusBorderColor="black"
                     size="sm"
                     w="full"
+                    maxW="400px"
                     rounded="md"
                   />
                   <chakra.p
                     color="red"
                     position={'absolute'}
-                    top={{ base: '15px', md: '12px' }}
+                    top={{ base: '10px', md: '8px' }}
                     right={{ base: '10px', md: '15px' }}
                     fontSize={{ base: '0.8rem', md: '15px' }}
                   >
@@ -188,76 +175,39 @@ const FinanceForm = () => {
                   </chakra.p>
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 3]}>
-                  <FormLabel
-                    htmlFor="lastName"
-                    fontSize="1rem"
-                    fontWeight="semibold"
-                    color="black"
-                  >
-                    Last name
-                  </FormLabel>
-                  <Input
-                    value={formInput.lastName}
-                    onChange={handleChange}
-                    type="text"
-                    name="lastName"
-                    id="lastName"
-                    required
-                    maxLength="25"
-                    autoComplete="family-name"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
-                    shadow="sm"
-                    size="sm"
-                    w="full"
-                    rounded="md"
-                  />
-                  <chakra.p
-                    color="red"
-                    position={'absolute'}
-                    top={{ base: '15px', md: '12px' }}
-                    right={{ base: '10px', md: '15px' }}
-                    fontSize={{ base: '0.8rem', md: '15px' }}
-                  >
-                    {formInput.lastName === '' ? formErrors.lastName : ''}
-                  </chakra.p>
-                </FormControl>
-
-                <FormControl isRequired as={GridItem} colSpan={[6, 4]}>
+                <FormControl isRequired as={GridItem} colSpan={[6]}>
                   <FormLabel
                     htmlFor="email"
+                    mb="2px"
                     fontSize="1rem"
-                    fontWeight="semibold"
                     color="black"
                   >
-                    Email address
+                    Email
                   </FormLabel>
                   <Input
                     value={formInput.email}
                     onChange={handleChange}
                     type="email"
+                    placeholder="Enter your email"
                     name="email"
                     id="email"
                     required
                     autoComplete="email"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
+                    borderColor="silver"
+                    bg="white"
+                    focusBorderColor="black"
                     shadow="sm"
                     size="sm"
                     w="full"
+                    maxW="400px"
                     rounded="md"
                   />
                   <chakra.p
                     color="red"
                     position={'absolute'}
-                    top={{ base: '15px', md: '12px' }}
+                    top={{ base: '10px', md: '8px' }}
                     right={{ base: '10px', md: '15px' }}
-                    fontSize={{ base: '0.8rem', md: '15px' }}
+                    fontSize={{ base: '0.75rem', md: '15px' }}
                   >
                     {validEmail === false ? formErrors.email : ''}
                   </chakra.p>
@@ -265,9 +215,9 @@ const FinanceForm = () => {
 
                 <FormControl as={GridItem} colSpan={6}>
                   <FormLabel
+                    mb="2px"
                     htmlFor="address"
                     fontSize="1rem"
-                    fontWeight="semibold"
                     color="black"
                   >
                     Street address
@@ -276,25 +226,26 @@ const FinanceForm = () => {
                     value={formInput.address}
                     onChange={handleChange}
                     type="text"
+                    placeholder={'Enter your address'}
                     name="address"
                     id="address"
+                    borderColor="silver"
                     autoComplete="street-address"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
+                    bg="white"
+                    focusBorderColor="black"
                     shadow="sm"
                     size="sm"
                     w="full"
+                    maxW="400px"
                     rounded="md"
                   />
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 4, null, 2]}>
+                <FormControl as={GridItem} colSpan={[6]}>
                   <FormLabel
                     htmlFor="creditScore"
                     fontSize="1rem"
-                    fontWeight="semibold"
+                    mb="2px"
                     color="black"
                   >
                     Credit Score
@@ -310,19 +261,20 @@ const FinanceForm = () => {
                     name="creditScore"
                     id="creditScore"
                     autoComplete="credit-score"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
+                    borderColor="silver"
+                    bg="white"
+                    placeholder="Enter credit score"
+                    focusBorderColor="black"
                     shadow="sm"
                     size="sm"
-                    w="full"
+                    w="100%"
+                    maxW="400px"
                     rounded="md"
                   />
                   <chakra.p
                     color="red"
                     position={'absolute'}
-                    top={{ base: '15px', md: '12px' }}
+                    top={{ base: '10px', md: '8px' }}
                     right={{ base: '10px', md: '15px' }}
                     fontSize={{ base: '0.8rem', md: '15px' }}
                   >
@@ -336,11 +288,11 @@ const FinanceForm = () => {
                   </chakra.p>
                 </FormControl>
 
-                <FormControl as={GridItem} colSpan={[6, 4, null, 2]}>
+                <FormControl as={GridItem} colSpan={[6]}>
                   <FormLabel
                     htmlFor="downPayment"
                     fontSize="1rem"
-                    fontWeight="semibold"
+                    mb="2px"
                     color="black"
                   >
                     Down Payment
@@ -349,25 +301,26 @@ const FinanceForm = () => {
                     value={formInput.downPayment}
                     onChange={handleChange}
                     type="number"
+                    placeholder="Enter down payment"
                     min="500"
                     max="50000"
                     required
                     name="downPayment"
                     id="downPayment"
                     autoComplete="down-payment"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
+                    borderColor="silver"
+                    bg="white"
+                    focusBorderColor="black"
                     shadow="sm"
                     size="sm"
-                    w="full"
+                    w="100%"
+                    maxW="400px"
                     rounded="md"
                   />
                   <chakra.p
                     color="red"
                     position={'absolute'}
-                    top={{ base: '15px', md: '12px' }}
+                    top={{ base: '10px', md: '8px' }}
                     right={{ base: '10px', md: '15px' }}
                     fontSize={{ base: '0.8rem', md: '15px' }}
                   >
@@ -384,7 +337,7 @@ const FinanceForm = () => {
                   <FormLabel
                     htmlFor="tradeIn"
                     fontSize="1rem"
-                    fontWeight="semibold"
+                    mb="2px"
                     color="black"
                   >
                     Trade-In
@@ -396,10 +349,9 @@ const FinanceForm = () => {
                     _placeholder="yes"
                     name="tradeIn"
                     id="tradeIn"
-                    mt={1}
-                    borderColor="black"
-                    bg="whitesmoke"
-                    focusBorderColor="brand.800"
+                    borderColor="silver"
+                    bg="white"
+                    focusBorderColor="black"
                     shadow="sm"
                     size="sm"
                     w="full"
@@ -411,15 +363,19 @@ const FinanceForm = () => {
                 </FormControl>
               </SimpleGrid>
             </Stack>
-            <Box px={{ base: 4, sm: 6 }} py={3} bg="red" textAlign="center">
+            <Box px={{ base: 4, sm: 6 }} py={6} bg="white" textAlign="center">
               <Button
                 onClick={handleSubmit}
-                mx="15px"
+                w="100%"
+                maxW="200px"
+                border="1px solid gray"
+                borderRadius="55px"
                 bg="white"
-                color="red"
+                color="black"
+                fontSize="0.8rem"
+                zIndex={99}
                 _hover={{
-                  color: 'black',
-                  boxShadow: 'xl',
+                  border: '2px solid black',
                 }}
               >
                 Submit
@@ -428,7 +384,11 @@ const FinanceForm = () => {
           </chakra.form>
         </GridItem>
       </SimpleGrid>
-      <ContactPrompt promptActive={`${promptActive}`} />
+      {promptActive === 'block' ? (
+        <ContactPrompt promptActive={`${promptActive}`} />
+      ) : (
+        <></>
+      )}
     </Box>
   )
 }

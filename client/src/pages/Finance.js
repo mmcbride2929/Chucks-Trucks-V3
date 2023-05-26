@@ -4,7 +4,7 @@ import Header from '../components/Finance/Header'
 
 const Finance = () => {
   return (
-    <Box bg="whitesmoke">
+    <Box bg="white">
       <Header />
       <FinanceForm />
     </Box>

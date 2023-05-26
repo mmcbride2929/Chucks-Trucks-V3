@@ -5,14 +5,19 @@ const ContactPrompt = ({ promptActive }) => {
   return (
     <Box
       textAlign="center"
-      bg="whitesmoke"
+      bg="white"
+      maxW="500px"
+      h="500px"
+      m="0 auto"
       border="1px solid silver"
       py={10}
       px={6}
-      display={`${promptActive}`}
-      shadow="md"
+      display={'flex'}
+      flexDir="column"
+      justifyContent="center"
+      alignItems="center"
     >
-      <CheckCircleIcon boxSize={'40px'} color={'green.500'} />
+      <CheckCircleIcon boxSize={'40px'} color={'black'} />
       <Heading as="h2" size="xl" mt={6} mb={2}>
         We've Received Your Info
       </Heading>

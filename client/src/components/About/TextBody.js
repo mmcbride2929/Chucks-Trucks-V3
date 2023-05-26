@@ -1,16 +1,9 @@
 import chuck from '../../img/photos/Chuck.jpg'
 
-import { Flex, Container, Text, Image, Box } from '@chakra-ui/react'
+import { Flex, Container, chakra, Text, Image, Box } from '@chakra-ui/react'
 const TextBody = () => {
   return (
-    <Box
-      mt="40px"
-      maxW={'1200px'}
-      textAlign="center"
-      bg="white"
-      shadow="md"
-      border="1px solid silver"
-    >
+    <Box maxW={'1200px'} textAlign="center" bg="white" m="0 auto" mt="60px">
       <Flex
         w={'full'}
         flexDirection={{ base: 'column', md: 'row' }}
@@ -18,11 +11,10 @@ const TextBody = () => {
       >
         <Box w={{ base: '100%', md: '50%' }} p={{ base: 4, sm: 6 }}>
           <Image
-            shadow="md"
             m="0 auto"
             mt={{ base: '10px', sm: '0px' }}
             src={chuck}
-            w={{ base: '24rem', md: '27rem', lg: '30rem' }}
+            w={{ base: '14rem', md: '17rem', lg: '22rem' }}
           />
         </Box>
         <Box
@@ -32,8 +24,29 @@ const TextBody = () => {
           fontWeight="500"
           fontSize={{ sm: '1rem', md: '1.1rem' }}
         >
-          {' '}
-          <Text fontWeight="500" fontSize={{ base: '0.9rem', sm: '1.1rem' }}>
+          <Box
+            textAlign="center"
+            fontWeight="700"
+            fontSize={{ base: '0.8rem', sm: '1.2rem', lg: '1.2rem' }}
+            letterSpacing="normal"
+            mb={4}
+          >
+            <chakra.h3>
+              "My name is Chuck, and I{' '}
+              <chakra.span fontWeight="700" color="red">
+                know
+              </chakra.span>{' '}
+              trucks."
+            </chakra.h3>
+            <chakra.p>- Chuck HiggleBottom</chakra.p>
+          </Box>{' '}
+          <Text
+            lineHeight="7"
+            textAlign="left"
+            fontWeight="500"
+            fontSize={{ base: '0.9rem', sm: '1rem' }}
+            px={14}
+          >
             Chuck's Trucks has been an established{' '}
             <Text as={'span'} fontStyle="italic" color="red">
               family owned

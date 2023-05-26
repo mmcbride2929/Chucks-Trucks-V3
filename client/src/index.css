@@ -4,3 +4,11 @@
   box-sizing: border-box;
   font-family: 'Chivo', sans-serif;
 }
+
+/* Add this CSS to your stylesheet or component */
+.chakra-input:-webkit-autofill,
+.chakra-input:-webkit-autofill:hover,
+.chakra-input:-webkit-autofill:focus,
+.chakra-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}

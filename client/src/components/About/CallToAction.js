@@ -16,11 +16,9 @@ const CallToAction = () => {
       m="5px auto"
       mt="40px"
       bg="white"
-      boxShadow="xl"
       p={4}
-      py={6}
+      py={16}
       w="100%"
-      border="1px solid silver"
     >
       <chakra.h1
         fontWeight="bold"
@@ -65,21 +63,27 @@ const CallToAction = () => {
           <chakra.p mx={2}>123 Big Truck St. Columbus, OH</chakra.p>
         </Box>
       </Box>
-      <Box mt={{ base: 6, md: 8 }} display="flex">
+      <Box
+        mt={{ base: 6, md: 8 }}
+        display="flex"
+        w="100%"
+        maxW="300px"
+        justifyContent="space-evenly"
+      >
         <Link
           _hover={{ textDecoration: 'none' }}
           onClick={() => navigate('/inventory')}
         >
           <Button
-            mx="15px"
-            bg="red"
-            size="sm"
-            color="white"
-            variant="solid"
+            w="125px"
+            border="1px solid gray"
+            borderRadius="55px"
+            bg="white"
+            color="black"
+            fontSize="0.8rem"
+            zIndex={99}
             _hover={{
-              color: 'white',
-              bg: 'black',
-              boxShadow: 'xl',
+              border: '2px solid black',
             }}
           >
             SHOP NOW
@@ -90,15 +94,15 @@ const CallToAction = () => {
           onClick={() => navigate('/finance')}
         >
           <Button
-            mx="15px"
-            bg="red"
-            size="sm"
-            color="white"
-            variant="solid"
+            w="125px"
+            border="1px solid gray"
+            borderRadius="55px"
+            bg="white"
+            color="black"
+            fontSize="0.8rem"
+            zIndex={99}
             _hover={{
-              color: 'white',
-              bg: 'black',
-              boxShadow: 'xl',
+              border: '2px solid black',
             }}
           >
             FINANCE

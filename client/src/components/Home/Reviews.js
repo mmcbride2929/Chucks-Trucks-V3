@@ -26,7 +26,7 @@ const Reviews = () => {
     <Box
       p={{ base: 6, sm: 0 }}
       maxW="950px"
-      m={{ base: '10px auto', sm: '75px auto' }}
+      m={{ base: '0px auto', sm: '75px auto' }}
     >
       <ReviewHeader />
       <Box
@@ -34,7 +34,7 @@ const Reviews = () => {
         display="flex"
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
-        my={{ base: 6, sm: 12 }}
+        my={{ base: 0, sm: 6 }}
       >
         {userReviews.map((review, index) => (
           <Review key={index} review={review} />

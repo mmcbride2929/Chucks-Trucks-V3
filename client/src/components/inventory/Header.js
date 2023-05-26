@@ -18,7 +18,7 @@ const Header = () => {
         <SortBySelect />
       </Flex>
       <chakra.h3
-        borderBottom="1px solid black"
+        borderBottom="1px solid silver"
         fontSize={{ base: '0.8rem', sm: '0.9rem' }}
       >
         {inventory.length} Results

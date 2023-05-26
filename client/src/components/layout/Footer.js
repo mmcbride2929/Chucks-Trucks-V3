@@ -12,7 +12,7 @@ const Footer = () => {
       m="0 auto"
     >
       <Flex
-        h={{ base: '4vh', sm: '4vh' }}
+        h={{ base: '5vh', sm: '4vh' }}
         w="full"
         as="footer"
         flexDir={{ base: 'column', sm: 'row' }}

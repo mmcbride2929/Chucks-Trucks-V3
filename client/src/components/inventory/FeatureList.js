@@ -10,7 +10,7 @@ const FeatureList = () => {
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
-      border="1.5px solid black"
+      border="1.5px solid silver"
       bg="white"
       p={4}
       py={8}
