@@ -45,15 +45,14 @@ const SingleVehicle = () => {
 
   return (
     <Box
-      bg="whitesmoke"
-      p="20px"
-      minH="92vh"
+      bg="white"
+      p={{ base: '15px', sm: '75px' }}
       display="flex"
       justifyContent="center"
     >
       <SimpleGrid
-        columns={{ base: 1, lg: 2 }}
-        spacing={{ base: 10, md: 10 }}
+        columns={{ base: 1, lg: 1 }}
+        spacing={{ base: 6, md: 4 }}
         p={{ base: '25px', sm: 5, lg: 6 }}
         bg="white"
         maxW={{ base: '', sm: '400px', md: '450px' }}
@@ -61,8 +60,8 @@ const SingleVehicle = () => {
         marginTop={5}
         marginBottom={10}
         mx={2}
-        boxShadow="xl"
-        shadow="lg"
+        boxShadow="sm"
+        shadow="sm"
         display="flex"
         justifyContent="center"
         flexDirection={{ base: 'column' }}
@@ -72,7 +71,7 @@ const SingleVehicle = () => {
             <chakra.p>loading</chakra.p>
           ) : (
             <Image
-              rounded={'md'}
+              rounded={'sm'}
               alt={'product image'}
               src={require(`../img/photos/${photo}`)}
               fit={'cover'}
@@ -87,14 +86,14 @@ const SingleVehicle = () => {
             <Heading
               lineHeight={1.1}
               fontWeight={700}
-              fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}
+              fontSize={{ base: '1rem', sm: '1.2rem' }}
             >
               {year} - {name}
             </Heading>
             {loading ? (
               <chakra.p>Loading</chakra.p>
             ) : (
-              <Text fontWeight={500} fontSize={'2xl'}>
+              <Text fontWeight={500} fontSize={'1.1rem'}>
                 ${price.toLocaleString('en-US')}
               </Text>
             )}
@@ -105,20 +104,20 @@ const SingleVehicle = () => {
             divider={<StackDivider borderColor="whitesmoke" />}
           >
             <VStack spacing={{ base: 4, sm: 6 }} maxW="400px">
-              <Text mt="25px" fontSize={'lg'}>
+              <Text mt="25px" fontSize={'0.9rem'}>
                 {description}
               </Text>
             </VStack>
             <Box>
               <Text
-                fontSize={{ base: '16px', sm: '22px', lg: '28px' }}
+                fontSize={'1.1rem'}
                 fontWeight={'700'}
                 textTransform={'uppercase'}
                 mb={1}
               >
                 Product Details
               </Text>
-              <List spacing={1}>
+              <List spacing={1} fontSize={'0.9rem'}>
                 <ListItem display="flex">
                   <Text
                     as={'span'}
@@ -178,16 +177,16 @@ const SingleVehicle = () => {
             >
               {' '}
               <Button
-                w="125px"
                 mt={{ base: '35px', sm: '25px', md: '25px' }}
-                bg="red"
-                color="white"
-                fontSize="0.9rem"
-                variant="solid"
-                boxShadow="lg"
+                w="125px"
+                border="1px solid gray"
+                borderRadius="55px"
+                bg="white"
+                color="black"
+                fontSize="0.8rem"
+                zIndex={99}
                 _hover={{
-                  bg: 'black',
-                  color: 'white',
+                  border: '2px solid black',
                 }}
               >
                 INVENTORY

@@ -75,23 +75,23 @@ const SaleItems = ({ vehicle }) => {
                 <chakra.span> mi.</chakra.span>
               </chakra.p>
             </Box>
-            <Link onClick={() => navigate(`inventory/${_id}`)}>
-              <Button
-                w="100%"
-                mt="25px"
-                border="1px solid gray"
-                borderRadius="55px"
-                bg="white"
-                color="black"
-                fontSize="0.8rem"
-                z-zIndex={99}
-                _hover={{
-                  border: '2px solid black',
-                }}
-              >
-                CHECK AVAILABILITY
-              </Button>
-            </Link>
+
+            <Button
+              onClick={() => navigate(`inventory/${_id}`)}
+              w="100%"
+              mt="25px"
+              border="1px solid gray"
+              borderRadius="55px"
+              bg="white"
+              color="black"
+              fontSize="0.8rem"
+              zIndex={99}
+              _hover={{
+                border: '2px solid black',
+              }}
+            >
+              CHECK AVAILABILITY
+            </Button>
           </Box>
         </Box>
       </Link>

@@ -18,10 +18,10 @@ const ContactPrompt = ({ promptActive }) => {
       alignItems="center"
     >
       <CheckCircleIcon boxSize={'40px'} color={'black'} />
-      <Heading as="h2" size="xl" mt={6} mb={2}>
+      <Heading as="h2" size="md" mt={12} mb={2}>
         We've Received Your Info
       </Heading>
-      <Text>
+      <Text mt={2}>
         Thank you for reaching out! We are processing your information and will
         have an estimate of a financial plan that fits you. Thanks again.
       </Text>

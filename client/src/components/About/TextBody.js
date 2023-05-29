@@ -14,18 +14,18 @@ const TextBody = () => {
             m="0 auto"
             mt={{ base: '10px', sm: '0px' }}
             src={chuck}
-            w={{ base: '14rem', md: '17rem', lg: '22rem' }}
+            w={{ base: '16rem', sm: '20rem', lg: '22rem' }}
           />
         </Box>
         <Box
-          py={{ base: 2, sm: 4 }}
-          px={4}
+          py={{ base: 8, md: 4 }}
+          px={{ base: 0, md: 4 }}
           w={{ base: '100%', md: '50%' }}
           fontWeight="500"
           fontSize={{ sm: '1rem', md: '1.1rem' }}
         >
           <Box
-            textAlign="center"
+            textAlign="left"
             fontWeight="700"
             fontSize={{ base: '0.8rem', sm: '1.2rem', lg: '1.2rem' }}
             letterSpacing="normal"
@@ -45,7 +45,7 @@ const TextBody = () => {
             textAlign="left"
             fontWeight="500"
             fontSize={{ base: '0.9rem', sm: '1rem' }}
-            px={14}
+            px={{ base: 0, md: 0 }}
           >
             Chuck's Trucks has been an established{' '}
             <Text as={'span'} fontStyle="italic" color="red">

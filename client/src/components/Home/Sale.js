@@ -1,6 +1,7 @@
 import { chakra, Box, Image } from '@chakra-ui/react'
 import SaleItems from './SaleItems'
 import salePhoto from '../../img/photos/oil-not-tires.jpg'
+import { Link } from 'react-router-dom'
 
 const Sale = ({ forSaleVehicles }) => {
   const carSelection = forSaleVehicles.slice(1, 3)
@@ -51,7 +52,7 @@ const Sale = ({ forSaleVehicles }) => {
             alt="truck-photo"
             w={{ base: '100%', sm: '100%', lg: '100%' }}
           />
-          <a href="inventory/6283f63197d65562ffc25759">
+          <Link to="inventory/6283f63197d65562ffc25759">
             <chakra.p
               mt={1}
               fontWeight={500}
@@ -60,7 +61,7 @@ const Sale = ({ forSaleVehicles }) => {
             >
               2011 Tundra
             </chakra.p>
-          </a>
+          </Link>
         </Box>
       </Box>
       <Box

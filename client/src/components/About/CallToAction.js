@@ -14,7 +14,7 @@ const CallToAction = () => {
       justifyContent="center"
       flexDir="column"
       m="5px auto"
-      mt="40px"
+      mt={{ base: '0px', md: '40px' }}
       bg="white"
       p={4}
       py={16}
@@ -25,14 +25,14 @@ const CallToAction = () => {
         fontSize={{ base: '1.4rem', sm: '1.8rem' }}
         textAlign="center"
         letterSpacing="tight"
-        mb={4}
+        mb={8}
       >
-        <chakra.h1 color="black">
+        <chakra.p color="black">
           Ready To <chakra.span color="red">Upgrade?</chakra.span>
-        </chakra.h1>
-        <chakra.h1 color="black">
+        </chakra.p>
+        <chakra.p color="black">
           Stop By Chucks <chakra.span color="red">Today!</chakra.span>
-        </chakra.h1>
+        </chakra.p>
       </chakra.h1>
       <Box color="black">
         <Box
@@ -64,7 +64,7 @@ const CallToAction = () => {
         </Box>
       </Box>
       <Box
-        mt={{ base: 6, md: 8 }}
+        mt={{ base: 12 }}
         display="flex"
         w="100%"
         maxW="300px"
@@ -82,6 +82,7 @@ const CallToAction = () => {
             color="black"
             fontSize="0.8rem"
             zIndex={99}
+            mr={{ base: 2, sm: 0 }}
             _hover={{
               border: '2px solid black',
             }}
@@ -101,6 +102,7 @@ const CallToAction = () => {
             color="black"
             fontSize="0.8rem"
             zIndex={99}
+            ml={{ base: 2, sm: 0 }}
             _hover={{
               border: '2px solid black',
             }}
