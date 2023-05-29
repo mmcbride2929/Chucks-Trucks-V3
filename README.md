@@ -3,19 +3,22 @@ The Chucks-Trucks website showcases a fictional truck dealership. It features a 
 
 The project follows the MERN stack (MongoDB, Express, React, Node.js) and incorporates Chakra UI for its styling. Notably, the website has been developed three times, with each iteration introducing new technologies. V1 was simply a React front end, and used a json file to store all vehicles. In V2 I built a Node.js backend & used axios to fetch the data from it. V3 mostly made logic improvements, and had a complete UI redesign.
 
-## [View Demo](https://aesthetic-choux-7c3aff.netlify.app/)
+## [View Demo](https://chucks-trucks.netlify.app/)
 
-![](/client/src/img/readmephoto.png)
+![readme](https://github.com/mmcbride2929/Chucks-Trucks-V3/assets/77947488/a0c28938-5785-4ccb-acd9-ae034bd347a5)
 
 ## How It's Made:
  
 # Client
 
 - React JS
-- React-router-dom (To handle routing)
-- Axios (for making api calls)
-- Chakra UI (for User Interface)
+- React-router-dom 
+- Axios 
+- Chakra UI 
 - Validator (to valid email addresses)
+- Node JS
+- MongoDB
+- Express
 
 # Server
 
@@ -40,4 +43,5 @@ The project follows the MERN stack (MongoDB, Express, React, Node.js) and incorp
 
 - How to host a back end server
 - How to create and fetch from an Express API
+
 
